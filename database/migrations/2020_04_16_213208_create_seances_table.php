@@ -15,6 +15,10 @@ class CreateSeancesTable extends Migration
     {
         Schema::create('seances', function (Blueprint $table) {
             $table->id();
+             $table->string('seance_code');
+             $table->string('meeting_time');
+
+
             $table->timestamps();
         });
     }

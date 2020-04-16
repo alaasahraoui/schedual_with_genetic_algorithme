@@ -69,11 +69,10 @@ class RoomController extends Controller
      */
     public function edit(Room $room)
     {
-           public function edit(Product $product)
-    {
+
         return view('rooms.edit',compact('room'));
     }
-    }
+     
 
     /**
      * Update the specified resource in storage.
@@ -82,17 +81,17 @@ class RoomController extends Controller
      * @param  \App\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Room $room)
     {
         $request->validate([
             'room_max' => 'required',
             'room_code' => 'required',
         ]);
   
-        $product->update($request->all());
+        $room->update($request->all());
   
         return redirect()->route('rooms.index')
-                        ->with('success','Product updated successfully');
+                        ->with('success','room updated successfully');
     }
 
     /**
@@ -101,7 +100,7 @@ class RoomController extends Controller
      * @param  \App\Room  $room
      * @return \Illuminate\Http\Response
      */
-   public function destroy(Product $product)
+   public function destroy(Room $room)
     {
         $room->delete();
   

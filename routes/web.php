@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
  
-Route::resource('rooms','RoomsController');
-
+Route::resource('rooms','RoomController');
+Route::resource('enseignants','EnseignantController');
 
 Route::get('/', function () {
     return view('welcome');

@@ -12,7 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
- 
+
+
+
+Route::resource('courses','CoursesController');
 Route::resource('rooms','RoomController');
 Route::resource('enseignants','EnseignantController');
 Route::resource('seances','SeanceController');

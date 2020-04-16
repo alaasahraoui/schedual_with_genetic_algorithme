@@ -8,7 +8,10 @@ class Enseignant extends Model
 {
 
 
-
+   public function courses()
+    {
+        return $this->hasMany(Courses::class);
+    }
 
 
   protected $fillable = [

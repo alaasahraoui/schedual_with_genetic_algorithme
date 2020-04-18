@@ -1,57 +1,99 @@
+ import mysql.connector
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   passwd="",
   database="test"
 )
-my_rooms_cursor = mydb.cursor()
-my_rooms_cursor.execute("SELECT room_code,room_max FROM rooms")
-my_rooms_list= my_rooms_cursor.fetchall()
+db_req= mydb.cursor()
 
 
 
-my_enseignants_cursor=mydb.cursor()
-my_enseignants_cursor.execute("SELECT code_ens,nom_ens FROM enseignants")
-my_enseignants_list= my_rooms_cursor.fetchall()
 
-
-
+import sqlite3 as sqlite
 import prettytable as prettytable
 import random as rnd
 POPULATION_SIZE = 9
 NUMB_OF_ELITE_SCHEDULES = 1
 TOURNAMENT_SELECTION_SIZE = 3
 MUTATION_RATE = 0.1
-class Data:
-    ROOMS = my_rooms_list
-    MEETING_TIMES = [["MT1", "MWF 09:00 - 10:00"],
-                     ["MT2", "MWF 10:00 - 11:00"],
-                     ["MT3", "TTH 09:00 - 10:30"],
-                     ["MT4", "TTH 10:30 - 12:00"]]
-    INSTRUCTORS = my_enseignants_list
+
+
+
+
+
+
+
+class DBMgr:
     def __init__(self):
-        self._rooms = []; self._meetingTimes = []; self._instructors = []
-        for i in range(0, len(self.ROOMS)):
-            self._rooms.append(Room(self.ROOMS[i][0], self.ROOMS[i][1]))
-        for i in range(0, len(self.MEETING_TIMES)):
-            self._meetingTimes.append(MeetingTime(self.MEETING_TIMES[i][0], self.MEETING_TIMES[i][1]))
-        for i in range(0, len(self.INSTRUCTORS)):
-            self._instructors.append(Instructor(self.INSTRUCTORS[i][0], self.INSTRUCTORS[i][1]))
-        course1 = Course("C1", "325K", [self._instructors[0], self._instructors[1]], 25)
-        course2 = Course("C2", "319K", [self._instructors[0], self._instructors[1], self._instructors[2]], 35)
-        course3 = Course("C3", "462k", [self._instructors[0], self._instructors[1]], 25)
-        course4 = Course("C4", "464K", [self._instructors[2], self._instructors[3]], 30)
-        course5 = Course("C5", "360C", [self._instructors[3]], 35)
-        course6 = Course("C6", "303K", [self._instructors[0], self._instructors[2]], 45)
-        course7 = Course("C7", "303L", [self._instructors[1], self._instructors[3]], 45)
-        self._courses = [course1, course2, course3, course4, course5, course6, course7]
-        dept1 = Department("MATH", [course1, course3])
-        dept2 = Department("EE", [course2, course4, course5])
-        dept3 = Department("PHY", [course6, course7])
-        self._depts = [dept1, dept2, dept3]
+
+        self._c =  db_req= mydb.cursor()
+        self._rooms = self.select_rooms()
+        self._meetingTimes = self.select_meeting_times()
+        self._instructors = self.select_instructors()
+        self._courses = self.select_courses()
+        self._depts = self.select_depts()
         self._numberOfClasses = 0
         for i in range(0, len(self._depts)):
             self._numberOfClasses += len(self._depts[i].get_courses())
+    def select_rooms(self):
+        self._c.execute("SELECT * FROM rooms")
+        rooms = self._c.fetchall()
+        returnRooms = []
+        for i in range(0, len(rooms)):
+            returnRooms.append(Room(rooms[i][0], rooms[i][1]))
+        return returnRooms
+    def select_meeting_times(self):
+        self._c.execute("SELECT * FROM seances")
+        meetingTimes = self._c.fetchall()
+        returnMeetingTimes = []
+        for i in range(0, len(meetingTimes)):
+            returnMeetingTimes.append(MeetingTime(meetingTimes[i][0], meetingTimes[i][1]))
+        return returnMeetingTimes
+    def select_instructors(self):
+        self._c.execute("SELECT * FROM enseignants")
+        instructors = self._c.fetchall()
+        returnInstructors = []
+        for i in range(0, len(instructors)):
+            returnInstructors.append(Instructor(instructors[i][0], instructors[i][1]))
+        return returnInstructors
+    def select_courses(self):
+        self._c.execute("SELECT * FROM courses")
+        courses = self._c.fetchall()
+        returnCourses = []
+        for i in range(0, len(courses)):
+            returnCourses.append(
+                Course(courses[i][0], courses[i][1], self.select_course_instructors(courses[i][0]), courses[i][2]))
+        return returnCourses
+    def select_depts(self):
+        self._c.execute("SELECT *FROM departements")
+        depts = self._c.fetchall()
+        returnDepts = []
+        for i in range(0, len(depts)):
+            returnDepts.append(Department(depts[i][0], self.select_dept_courses(depts[i][0])))
+        return returnDepts
+    def select_course_instructors(self, courseNumber):
+        self._c.execute("SELECT course_code ,ens_code FROM course_enseignants where course_code = '" + courseNumber + "'")
+        dbInstructorNumbers = self._c.fetchall()
+        instructorNumbers = []
+        for i in range(0, len(dbInstructorNumbers)):
+            instructorNumbers.append(dbInstructorNumbers[i][1])
+        returnValue = []
+        for i in range(0, len(self._instructors)):
+           if  self._instructors[i].get_id() in instructorNumbers:
+               returnValue.append(self._instructors[i])
+        return returnValue
+    def select_dept_courses(self, deptName):
+        self._c.execute("SELECT * FROM departement_courses where dep_nom = '" + deptName + "'")
+        dbCourseNumbers = self._c.fetchall()
+        courseNumbers = []
+        for i in range(0, len(dbCourseNumbers)):
+            courseNumbers.append(dbCourseNumbers[i][1])
+        returnValue = []
+        for i in range(0, len(self._courses)):
+           if self._courses[i].get_number() in courseNumbers:
+               returnValue.append(self._courses[i])
+        return returnValue
     def get_rooms(self): return self._rooms
     def get_instructors(self): return self._instructors
     def get_courses(self): return self._courses
@@ -252,26 +294,41 @@ class DisplayMgr:
         availableMeetingTimeTable = prettytable.PrettyTable(['id', 'Meeting Time'])
         meetingTimes = data.get_meetingTimes()
         for i in range(0, len(meetingTimes)):
+            
             availableMeetingTimeTable.add_row([meetingTimes[i].get_id(), meetingTimes[i].get_time()])
         print(availableMeetingTimeTable)
     def print_generation(self, population):
         table1 = prettytable.PrettyTable(['schedule #', 'fitness', '# of conflicts', 'classes [dept,class,room,instructor,meeting-time]'])
         schedules = population.get_schedules()
         for i in range(0, len(schedules)):
-            table1.add_row([str(i), round(schedules[i].get_fitness(),3), schedules[i].get_numbOfConflicts(), schedules[i].__str__()])
+            table1.add_row([str(i+1), round(schedules[i].get_fitness(),3), schedules[i].get_numbOfConflicts(), schedules[i].__str__()])
         print(table1)
     def print_schedule_as_table(self, schedule):
         classes = schedule.get_classes()
         table = prettytable.PrettyTable(['Class #', 'Dept', 'Course (number, max # of students)', 'Room (Capacity)', 'Instructor (Id)',  'Meeting Time (Id)'])
         for i in range(0, len(classes)):
-            table.add_row([str(i), classes[i].get_dept().get_name(), classes[i].get_course().get_name() + " (" +
+            table.add_row([str(i+1), classes[i].get_dept().get_name(), classes[i].get_course().get_name() + " (" +
                            classes[i].get_course().get_number() + ", " +
                            str(classes[i].get_course().get_maxNumbOfStudents()) +")",
                            classes[i].get_room().get_number() + " (" + str(classes[i].get_room().get_seatingCapacity()) + ")",
                            classes[i].get_instructor().get_name() +" (" + str(classes[i].get_instructor().get_id()) +")",
                            classes[i].get_meetingTime().get_time() +" (" + str(classes[i].get_meetingTime().get_id()) +")"])
         print(table)
-data = Data()
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+data = DBMgr()
 displayMgr = DisplayMgr()
 displayMgr.print_available_data()
 generationNumber = 0
@@ -289,3 +346,4 @@ while (population.get_schedules()[0].get_fitness() != 1.0):
     displayMgr.print_generation(population)
     displayMgr.print_schedule_as_table(population.get_schedules()[0])
 print("\n\n")
+

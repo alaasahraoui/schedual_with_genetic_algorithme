@@ -17,6 +17,7 @@ class CreateSeancesTable extends Migration
             
              $table->string('seance_code');
              $table->string('meeting_time');
+               $table->bigIncrements('id');
 
  
         });

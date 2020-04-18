@@ -17,6 +17,7 @@ class CreateEenseignantsTable extends Migration
             
             $table->string('code_ens');
             $table->string('nom_ens');
+              $table->bigIncrements('id');
           
         });
     }

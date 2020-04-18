@@ -14,9 +14,12 @@ class CreateDepartementCoursesTable extends Migration
     public function up()
     {
         Schema::create('departement_courses', function (Blueprint $table) {
-          
+                          
+            
             $table->string('dep_nom');
             $table->string('course_code');
+            $table->bigIncrements('id');
+
 
 
             

@@ -17,6 +17,7 @@ class CreateRoomsTable extends Migration
        
             $table->string('room_code');
             $table->integer('room_max');
+              $table->bigIncrements('id');
         
         });
     }

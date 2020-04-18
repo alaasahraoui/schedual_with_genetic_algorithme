@@ -10,4 +10,10 @@ class Course extends Model
     {
         return $this->belongsTo(Enseignant::class);
     }
+
+
+ protected $fillable = [
+        'course_nom', 'course_code','course_max','course_enseignant'
+    ];
+
 }

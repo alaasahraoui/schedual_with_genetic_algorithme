@@ -14,10 +14,10 @@ class CreateEenseignantsTable extends Migration
     public function up()
     {
         Schema::create('enseignants', function (Blueprint $table) {
-            $table->id();
+            
             $table->string('code_ens');
             $table->string('nom_ens');
-            $table->timestamps();
+          
         });
     }
 

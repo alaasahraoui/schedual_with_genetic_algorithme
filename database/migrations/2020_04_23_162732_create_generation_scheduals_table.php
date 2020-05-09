@@ -16,7 +16,7 @@ class CreateGenerationSchedualsTable extends Migration
         Schema::create('generation_scheduals', function (Blueprint $table) {
             $table->integer('generation_id');
             $table->string('schaduale_id');
-            $table->integer('schadual_fitness');
+            $table->float('schadual_fitness');
             $table->string('schadual_classes');
 
 

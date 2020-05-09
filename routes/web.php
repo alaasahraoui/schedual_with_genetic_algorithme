@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::resource('generations','GenerationController');
+Route::resource('generation_scheduals','GenerationSchedualController');
 
 Route::resource('courses','CoursesController');
 Route::resource('rooms','RoomController');

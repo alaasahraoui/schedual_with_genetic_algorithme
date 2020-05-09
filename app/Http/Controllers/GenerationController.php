@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Generation;
+ 
 class GenerationController extends Controller
 {
     /**
@@ -13,8 +14,10 @@ class GenerationController extends Controller
      */
     public function index()
     {
-        //
+       $generations=Generation::all();
+       return view('generations.index', compact('generations'));
     }
+
 
     /**
      * Show the form for creating a new resource.

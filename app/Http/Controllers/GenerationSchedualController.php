@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\GenerationSchedual;
 class GenerationSchedualController extends Controller
 {
     /**
@@ -11,10 +11,12 @@ class GenerationSchedualController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+     public function index()
     {
-        //
+       $generation_schaduals=GenerationSchedual::all();
+       return view('generation_schaduals.index', compact('generation_schaduals'));
     }
+
 
     /**
      * Show the form for creating a new resource.

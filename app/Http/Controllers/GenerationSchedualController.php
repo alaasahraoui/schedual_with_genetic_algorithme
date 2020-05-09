@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\GenerationSchedual;
+use App\Generation;
 class GenerationSchedualController extends Controller
 {
     /**
@@ -12,9 +13,11 @@ class GenerationSchedualController extends Controller
      * @return \Illuminate\Http\Response
      */
      public function index()
-    {
-       $generation_schaduals=GenerationSchedual::all();
-       return view('generation_schaduals.index', compact('generation_schaduals'));
+    { 
+         $i=0;
+    $generations=Generation::all();
+    $generation_schaduals=GenerationSchedual::all();
+    return view('generation_schaduals.index', compact(['generation_schaduals','generations']));
     }
 
 

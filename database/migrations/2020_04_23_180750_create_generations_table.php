@@ -14,7 +14,7 @@ class CreateGenerationsTable extends Migration
     public function up()
     {
         Schema::create('generations', function (Blueprint $table) {
-            $table->id();
+            $table->integer('generation_id');
             $table->timestamps();
         });
     }

@@ -10,7 +10,6 @@
 <h1>{{$generation_schedual->generation_idd}}</h1>
 
 <ul>
-	
  
 <li>{{$generation_schedual->schaduale_id}}   </li>
 <li>{{$generation_schedual->schadual_fitness}}   </li>

@@ -14,8 +14,7 @@ class CreateGenerationSchedualsTable extends Migration
     public function up()
     {
         Schema::create('generation_scheduals', function (Blueprint $table) {
-            $table->integer('generation_idd');
-            $table->unsignedInteger('generation_id')->nullable();
+            $table->integer('generation_id');
             $table->string('schaduale_id');
             $table->float('schadual_fitness');
             $table->string('schadual_classes');

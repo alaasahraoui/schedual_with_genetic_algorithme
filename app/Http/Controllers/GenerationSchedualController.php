@@ -14,7 +14,7 @@ class GenerationSchedualController extends Controller
      */
      public function index()
     { 
-         $i=0;
+          
     $generations=Generation::all();
     $generation_schaduals=GenerationSchedual::all();
     return view('generation_schaduals.index', compact(['generation_schaduals','generations']));

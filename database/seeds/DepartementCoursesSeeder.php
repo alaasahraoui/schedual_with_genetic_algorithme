@@ -27,7 +27,7 @@ class DepartementCoursesSeeder extends Seeder
         ]);
 
                                  DB::table('departement_courses')->insert([
-            'dep_nom' => "INFO",
+            'dep_nom' => "Bio",
             
              'course_code' => "XC3",
             

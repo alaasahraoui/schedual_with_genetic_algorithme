@@ -32,7 +32,7 @@ class CourseSeeder extends Seeder
 
            DB::table('courses')->insert([
             'course_code' => "XC3",
-            'course_nom' =>"analyse" ,
+            'course_nom' =>"Anatomy" ,
             'course_max'=>30,
             
             

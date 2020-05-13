@@ -20,7 +20,7 @@ class DepartementSeeder extends Seeder
 
             DB::table('departements')->insert([
            
-            'dep_nom' => "INFO",
+            'dep_nom' => "Bio",
            
             
         ]);

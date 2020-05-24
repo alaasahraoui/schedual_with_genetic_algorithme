@@ -18,7 +18,8 @@ class CreateCoursesTable extends Migration
             $table->string("course_code");
             $table->string("course_nom");
             $table->integer("course_max");
-              $table->bigIncrements('id');
+            $table->string("fondamental")->nullable();
+            $table->bigIncrements('id');
 
         
  

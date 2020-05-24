@@ -21,6 +21,7 @@
 	<th style="border:solid;" >schedual_fittnes</th>
 	<th style="border:solid;" >schedual_classes</th>
 @foreach($generation_schaduals as $generation_schadual)
+
 @if($generation_schadual->generation_id==$generation->generation_id)
  
 
@@ -35,9 +36,6 @@
 
 
 @endif
-
-
-
 @endforeach
 </table>
 @endforeach

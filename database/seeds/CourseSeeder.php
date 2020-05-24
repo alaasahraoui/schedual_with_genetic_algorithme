@@ -17,7 +17,8 @@ class CourseSeeder extends Seeder
             'course_code' => "XC1",
             'course_nom' =>"algorithme" ,
             'course_max'=>25,
-            'fondamental' =>"oui"
+            'fondamental' =>"oui",
+            'type' =>"cour"
             
             
         ]);
@@ -27,16 +28,19 @@ class CourseSeeder extends Seeder
             'course_code' => "XC2",
             'course_nom' =>"cryptography" ,
             'course_max'=>30,
-            'fondamental' =>"non"
+            'fondamental' =>"non",
+            'type' =>"cour"
             
             
         ]);
 
            DB::table('courses')->insert([
             'course_code' => "XC3",
-            'course_nom' =>"Anatomy" ,
+            'course_nom' =>"TD_Algo" ,
             'course_max'=>30,
-            'fondamental' =>"non"
+            'fondamental' =>"oui",
+            'type' =>"td"
+
             
             
         ]);
@@ -44,7 +48,8 @@ class CourseSeeder extends Seeder
             'course_code' => "XC4",
             'course_nom' =>"IA" ,
             'course_max'=>45,
-            'fondamental' =>"non"
+            'fondamental' =>"non",
+            'type' =>"cour"
             
             
         ]);

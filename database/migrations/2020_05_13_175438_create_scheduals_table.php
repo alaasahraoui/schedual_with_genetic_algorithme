@@ -18,6 +18,7 @@ class CreateSchedualsTable extends Migration
             $table->string('generation_id');
             $table->string('schedual_id');
             $table->string('meeting_time');
+            $table->string('meeting_time_id')->nullable();
             $table->string('departement');
             $table->string('coure');
             $table->string('CourMaxStudents');

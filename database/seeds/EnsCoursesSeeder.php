@@ -37,6 +37,21 @@ class EnsCoursesSeeder extends Seeder
         ]);
 
 
+     DB::table('course_enseignants')->insert([
+            'course_code' => "XC5",
+            'ens_code' => "Ens5",
+            
+        ]);
+
+
+     DB::table('course_enseignants')->insert([
+            'course_code' => "XC6",
+            'ens_code' => "Ens5",
+            
+        ]);
+
+
+
 
     }
 }

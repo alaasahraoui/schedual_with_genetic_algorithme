@@ -41,5 +41,11 @@ class EnseignantSeeder extends Seeder
             'nom_ens' => "Miss Bacha",
             
         ]);
+
+  DB::table('enseignants')->insert([
+            'code_ens' => "Ens5",
+            'nom_ens' => "Boutomi",
+            
+        ]);
     }
 }

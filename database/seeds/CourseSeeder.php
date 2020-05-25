@@ -24,17 +24,8 @@ class CourseSeeder extends Seeder
         ]);
 
 
-        DB::table('courses')->insert([
-            'course_code' => "XC2",
-            'course_nom' =>"cryptography" ,
-            'course_max'=>30,
-            'fondamental' =>"non",
-            'type' =>"cour"
-            
-            
-        ]);
 
-           DB::table('courses')->insert([
+             DB::table('courses')->insert([
             'course_code' => "XC3",
             'course_nom' =>"TD_Algo" ,
             'course_max'=>30,
@@ -44,16 +35,48 @@ class CourseSeeder extends Seeder
             
             
         ]);
-                  DB::table('courses')->insert([
-            'course_code' => "XC4",
-            'course_nom' =>"IA" ,
-            'course_max'=>45,
+
+
+        DB::table('courses')->insert([
+            'course_code' => "XC2",
+            'course_nom' =>"TD_AI" ,
+            'course_max'=>30,
             'fondamental' =>"non",
-            'type' =>"cour"
+            'type' =>"td"                        
+        ]);
+
+   
+                  DB::table('courses')->insert([
+            'course_code'=> "XC4",
+            'course_nom' =>"IA" ,
+            'course_max' =>45,
+            'fondamental'=>"non",
+            'type'       =>"cour"
             
             
         ]);
 
+                  DB::table('courses')->insert([
+            'course_code'=> "XC5",
+            'course_nom' =>"POO" ,
+            'course_max' =>45,
+            'fondamental'=>"oui",
+            'type'       =>"cour"
+            
+            
+        ]);
+
+
+
+                  DB::table('courses')->insert([
+            'course_code'=> "XC6",
+            'course_nom' =>"IHM" ,
+            'course_max' =>30,
+            'fondamental'=>"non",
+            'type'       =>"cour"
+            
+            
+        ]);
 
 
 

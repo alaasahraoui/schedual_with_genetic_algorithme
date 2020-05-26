@@ -464,7 +464,7 @@
 
 <td>
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='25'  && $schedual->generation_id==$generation->generation_id)    
+@if($schedual->meeting_time_id=='Se25'  && $schedual->generation_id==$generation->generation_id)    
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul><li>{{$schedual->enseignant}}</li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>

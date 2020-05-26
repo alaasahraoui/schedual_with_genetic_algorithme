@@ -77,6 +77,46 @@ class CourseSeeder extends Seeder
             
             
         ]);
+                  DB::table('courses')->insert([
+            'course_code'=> "XC7",
+            'course_nom' =>"IHM2" ,
+            'course_max' =>30,
+            'fondamental'=>"non",
+            'type'       =>"cour"
+            
+            
+        ]);
+                  DB::table('courses')->insert([
+            'course_code'=> "XC8",
+            'course_nom' =>"IHM3" ,
+            'course_max' =>30,
+            'fondamental'=>"non",
+            'type'       =>"cour"
+            
+            
+        ]);
+
+                  DB::table('courses')->insert([
+            'course_code'=> "XC9",
+            'course_nom' =>"IHM4" ,
+            'course_max' =>30,
+            'fondamental'=>"non",
+            'type'       =>"cour"
+            
+            
+        ]);
+
+
+                      DB::table('courses')->insert([
+            'course_code'=> "XC10",
+            'course_nom' =>"IHM5" ,
+            'course_max' =>30,
+            'fondamental'=>"non",
+            'type'       =>"cour"
+            
+            
+        ]);
+
 
 
 

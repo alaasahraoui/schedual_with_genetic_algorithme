@@ -49,7 +49,29 @@ class DepartementCoursesSeeder extends Seeder
             'course_code' => "XC6",
             
         ]);
+            DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC7",
+            
+        ]);
+            DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC8",
+            
+        ]);
 
+
+            DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC9",
+            
+        ]);
+
+            DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC10",
+            
+        ]);
 
 
 

@@ -26,6 +26,10 @@ class CreateSchedualsTable extends Migration
             $table->string('instructor_id');
             $table->string('salle');
             $table->string('salleMax');
+            $table->string('specialite');
+            $table->string('section');
+            $table->string('groupe');
+
 
 
       

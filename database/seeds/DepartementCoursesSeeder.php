@@ -12,7 +12,7 @@ class DepartementCoursesSeeder extends Seeder
     public function run()
     {
                            DB::table('departement_courses')->insert([
-            'dep_nom' => "ST",
+            'dep_nom' => "INFO",
             
              'course_code' => "XC1",
             
@@ -27,7 +27,7 @@ class DepartementCoursesSeeder extends Seeder
         ]);
 
                                  DB::table('departement_courses')->insert([
-            'dep_nom' => "Bio",
+            'dep_nom' => "INFO",
             'course_code' => "XC3",
             
         ]);
@@ -56,18 +56,13 @@ class DepartementCoursesSeeder extends Seeder
         ]);
             DB::table('departement_courses')->insert([
             'dep_nom' => "INFO",
-            'course_code' => "XC8",
-            
-        ]);
-
-
-            DB::table('departement_courses')->insert([
-            'dep_nom' => "INFO",
             'course_code' => "XC9",
             
         ]);
 
-            DB::table('departement_courses')->insert([
+
+
+                        DB::table('departement_courses')->insert([
             'dep_nom' => "INFO",
             'course_code' => "XC10",
             
@@ -75,8 +70,179 @@ class DepartementCoursesSeeder extends Seeder
 
 
 
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC11",
+            
+        ]);
+
+ 
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC12",
+            
+        ]);
 
 
 
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC13",
+            
+        ]);
+
+
+
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC14",
+            
+        ]);
+
+
+
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC15",
+            
+        ]);
+
+
+
+
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC16",
+            
+        ]);
+
+
+
+
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC17",
+            
+        ]);
+
+
+
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC18",
+            
+        ]);
+
+
+
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC19",
+            
+        ]);
+
+
+
+
+
+
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC20",
+            
+        ]);
+
+
+
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC21",
+            
+        ]);
+
+
+
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC22",
+            
+        ]);
+
+
+
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC23",
+            
+        ]);
+
+
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC24",
+            
+        ]);
+
+
+
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC25",
+            
+        ]);
+
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC26",
+            
+        ]);
+
+
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC27",
+            
+        ]);
+
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC28",
+            
+        ]);
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC29",
+            
+        ]);
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC30",
+            
+        ]);
+
+                                    DB::table('departement_courses')->insert([
+            'dep_nom' => "INFO",
+            'course_code' => "XC32",
+            
+        ]);
+
+ 
     }
 }

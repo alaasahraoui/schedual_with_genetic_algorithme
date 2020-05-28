@@ -18,18 +18,6 @@ class DepartementSeeder extends Seeder
             
         ]);
 
-            DB::table('departements')->insert([
            
-            'dep_nom' => "Bio",
-           
-            
-        ]);
-            DB::table('departements')->insert([
-            
-            'dep_nom' => "ST",
-           
-            
-        ]);
-
     }
 }

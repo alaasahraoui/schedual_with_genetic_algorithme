@@ -17,18 +17,16 @@ class RoomSeeder extends Seeder
     {
 
 
-    		   DB::table('rooms')->insert([
+               DB::table('rooms')->insert([
             'room_code' => 'R1',
-            'room_max' => 25,
+            'room_max' => 120,
             
         ]);
-
-
-
-
+ 
+ 
     		   		   DB::table('rooms')->insert([
             'room_code' =>  'R2',
-            'room_max' => 45,
+            'room_max' => 120,
             
         ]);
 
@@ -36,9 +34,58 @@ class RoomSeeder extends Seeder
 
     		   		   		   DB::table('rooms')->insert([
             'room_code' =>  'R3',
-            'room_max' => 35,
+            'room_max' => 120,
             
         ]);
-     
+
+
+                               DB::table('rooms')->insert([
+            'room_code' =>  'R4',
+            'room_max' => 120,
+            
+        ]);
+                               DB::table('rooms')->insert([
+            'room_code' =>  'R5',
+            'room_max' => 120,
+            
+        ]);
+
+
+
+
+                               DB::table('rooms')->insert([
+            'room_code' =>  'R6',
+            'room_max' => 120,
+            
+        ]);
+
+
+
+                               DB::table('rooms')->insert([
+            'room_code' =>  'R7',
+            'room_max' => 120,
+            
+        ]);
+
+
+
+                               DB::table('rooms')->insert([
+            'room_code' =>  'R8',
+            'room_max' => 120,
+            
+        ]);
+
+                               DB::table('rooms')->insert([
+            'room_code' =>  'R9',
+            'room_max' => 120,
+            
+        ]);
+
+                                DB::table('rooms')->insert([
+            'room_code' =>  'R10',
+            'room_max' => 120,
+            
+        ]);
+
     }
 }

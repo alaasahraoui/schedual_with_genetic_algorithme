@@ -20,6 +20,9 @@ class CreateCoursesTable extends Migration
             $table->integer("course_max");
             $table->string("fondamental")->nullable(); 
             $table->string("type")->nullable();
+            $table->string('specialite');
+            $table->string('section');
+            $table->string('groupe')->nullable();
             $table->bigIncrements('id');
 
         

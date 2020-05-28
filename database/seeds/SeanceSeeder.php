@@ -172,6 +172,7 @@ class SeanceSeeder extends Seeder
             'meeting_time' => "14h15-15h50",
             
         ]);
+ 
 
     }
 }

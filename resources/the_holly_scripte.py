@@ -1,28 +1,66 @@
  import mysql.connector
+    
+    
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   passwd="",
   database="test"
 )
+db_req2= mydb.cursor()
+db_req2.execute("select * from enseignants")
+enss=db_req2.fetchall()
+
+
 db_req= mydb.cursor()
+db_req.execute("DELETE from generation_scheduals")
+
+
+db_req= mydb.cursor()
+db_req.execute("DELETE from generations")
+
+
+db_req= mydb.cursor()
+db_req.execute("DELETE from scheduals")
 
 
 
 
-import sqlite3 as sqlite
-import prettytable as prettytable
+
+import prettytable
 import random as rnd
+
+
+
+
+
+
 POPULATION_SIZE = 9
+
+
+
+
 NUMB_OF_ELITE_SCHEDULES = 1
 TOURNAMENT_SELECTION_SIZE = 3
 MUTATION_RATE = 0.1
 
 
+matin=['Se1', 'Se2' ,'Se3',  'Se6', 'Se7', 'Se8' , 'Se11', 'Se12' ,'Se13' , 'Se16' ,'Se17' ,'Se18' ,'Se21','Se22','Se23']
+apres_midi=['Se4','Se5' ,'Se9', 'Se10', 'Se14', 'Se15', 'Se19', 'Se20', 'Se24' ,'Se25']
+
+ 
 
 
+jour1=['Se1','Se2' ,'Se3','Se4','Se5' ]
+jour2=['Se6','Se7', 'Se8','Se9','Se10' ]
+jour3=['Se11','Se12' ,'Se13''Se14','Se15']
+jour4=['Se16','Se17' ,'Se18','Se19','Se20']
+jour5=['Se21','Se22','Se23','Se24' ,'Se25']
+jours=[jour1,jour2,jour3,jour4,jour5]
 
 
+specialites=['l3_siq']
+sections=['s1','s2']
 
 class DBMgr:
     def __init__(self):
@@ -63,7 +101,7 @@ class DBMgr:
         returnCourses = []
         for i in range(0, len(courses)):
             returnCourses.append(
-                Course(courses[i][0], courses[i][1], self.select_course_instructors(courses[i][0]), courses[i][2]))
+                Course(courses[i][0], courses[i][1], self.select_course_instructors(courses[i][0]), courses[i][2],courses[i][3],courses[i][4],courses[i][5],courses[i][6],courses[i][7]))
         return returnCourses
     def select_depts(self):
         self._c.execute("SELECT *FROM departements")
@@ -127,20 +165,95 @@ class Schedule:
                 newClass.set_meetingTime(data.get_meetingTimes()[rnd.randrange(0, len(data.get_meetingTimes()))])
                 newClass.set_room(data.get_rooms()[rnd.randrange(0, len(data.get_rooms()))])
                 newClass.set_instructor(courses[j].get_instructors()[rnd.randrange(0, len(courses[j].get_instructors()))])
+                
                 self._classes.append(newClass)
         return self
     def calculate_fitness(self):
         self._numbOfConflicts = 0
         classes = self.get_classes()
+
+           
+            #contraint 2 cour max par jour pour chque section de chque specialite
+        for jour in jours:
+            cpt=0
+            for i in range(0, len(classes)):
+                for specialite in specialites:
+                    for section in sections:
+                        if(classes[i].get_course().get_specialite()==specialite and classes[i].get_course().get_section()==section):
+                            for seance in jour:
+                                if(classes[i].get_meetingTime().get_id()==seance and classes[i].get_course().get_typeCour()=='cour'):
+                                    
+                                    cpt+=1
+                                    if(cpt>2):self._numbOfConflicts += 0.1
+                            #fin
+                            
+                            
+            #contraint 4 cour max par seance jour pour chque section de chque specialite
+       # for jour in jours:
+          #  cpt=0
+          #  for i in range(0, len(classes)):
+           #     for specialite in specialites:
+            #        for section in sections:
+             #           if(classes[i].get_course().get_specialite()==specialite and classes[i].get_course().get_section()==section):
+              #              for seance in jour:
+               #                 if(classes[i].get_meetingTime().get_id()==seance ):
+                #                    cpt+=1
+                 #                   if(cpt>4):self._numbOfConflicts += 0.25
+                            #fin                            
+                            
+        
+        
         for i in range(0, len(classes)):
             if (classes[i].get_room().get_seatingCapacity() < classes[i].get_course().get_maxNumbOfStudents()):
                 self._numbOfConflicts += 1
+          
+ 
+                         
+
+          
+                    
+ 
+ 
+                
+                
+            #contraint: cour/td fondamental matin seulment 
+            if (classes[i].get_meetingTime().get_id() not in matin and classes[i].get_course().get_fondamental()=="oui"):
+                self._numbOfConflicts += 0.1            
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
             for j in range(0, len(classes)):
+                 
                 if (j >= i):
+                
                     if (classes[i].get_meetingTime() == classes[j].get_meetingTime() and
                     classes[i].get_id() != classes[j].get_id()):
                         if (classes[i].get_room() == classes[j].get_room()): self._numbOfConflicts += 1
                         if (classes[i].get_instructor() == classes[j].get_instructor()): self._numbOfConflicts += 1
+                            
+                            
+                        
+                        if(classes[i].get_course().get_specialite()==classes[j].get_course().get_specialite()):
+                            if(classes[i].get_course().get_section()==classes[j].get_course().get_section()):
+                                if(  (classes[i].get_course().get_typeCour()=='td' and classes[j].get_course().get_typeCour()=='td')):
+                                    if(  (classes[i].get_course().get_groupe()==classes[j].get_course().get_groupe())):
+                                        self._numbOfConflicts += 1
+                                
+                                
+                                if(    (classes[i].get_course().get_typeCour()=='cour' and classes[j].get_course().get_typeCour()=='td') or (classes[i].get_course().get_typeCour()=='td' and classes[j].get_course().get_typeCour()=='cour') or (classes[i].get_course().get_typeCour()=='cour' and classes[j].get_course().get_typeCour()=='cour')  ):
+
+                                        self._numbOfConflicts += 1
+                                    
+                               
         return 1 / ((1.0*self._numbOfConflicts + 1))
     def __str__(self):
         returnValue = ""
@@ -155,6 +268,12 @@ class Population:
         self._schedules = []
         for i in range(0, size): self._schedules.append(Schedule().initialize())
     def get_schedules(self): return self._schedules
+    
+    
+    
+    
+    
+    
 class GeneticAlgorithm:
     def evolve(self, population): return self._mutate_population(self._crossover_population(population))
     def _crossover_population(self, pop):
@@ -192,11 +311,21 @@ class GeneticAlgorithm:
         tournament_pop.get_schedules().sort(key=lambda x: x.get_fitness(), reverse=True)
         return tournament_pop
 class Course:
-    def __init__(self, number, name, instructors, maxNumbOfStudents):
+    def __init__(self, number, name, instructors, maxNumbOfStudents,fondamental,typeCour,specialite,section,groupe):
+        self._specialite=specialite
+        self._section=section
+        self._groupe=groupe
+        self._typeCour=typeCour
         self._number = number
         self._name = name
         self._maxNumbOfStudents = maxNumbOfStudents
         self._instructors = instructors
+        self._fondamental=fondamental
+    def get_section(self): return self._section
+    def get_groupe(self): return self._groupe
+    def get_specialite(self): return self._specialite    
+    def get_typeCour(self): return self._typeCour   
+    def get_fondamental(self): return self._fondamental    
     def get_number(self): return self._number
     def get_name(self): return self._name
     def get_instructors(self): return self._instructors
@@ -206,6 +335,9 @@ class Instructor:
     def __init__(self, id, name):
         self._id = id
         self._name = name
+        self._work_days=[]
+    def get_work_days(self): return len(self._work_days)
+    
     def get_id(self): return self._id
     def get_name(self): return self._name
     def __str__(self): return self._name
@@ -235,6 +367,10 @@ class Class:
         self._instructor = None
         self._meetingTime = None
         self._room = None
+        
+         
+         
+       
     def get_id(self): return self._id
     def get_dept(self): return self._dept
     def get_course(self): return self._course
@@ -248,6 +384,7 @@ class Class:
         return str(self._dept.get_name()) + "," + str(self._course.get_number()) + "," + \
                str(self._room.get_number()) + "," + str(self._instructor.get_id()) + "," + str(self._meetingTime.get_id())
 class DisplayMgr:
+    
     def print_available_data(self):
         print("> All Available Data")
         self.print_dept()
@@ -298,23 +435,42 @@ class DisplayMgr:
             availableMeetingTimeTable.add_row([meetingTimes[i].get_id(), meetingTimes[i].get_time()])
         print(availableMeetingTimeTable)
     def print_generation(self, population):
-        table1 = prettytable.PrettyTable(['schedule #', 'fitness', '# of conflicts', 'classes [dept,class,room,instructor,meeting-time]'])
+      
         schedules = population.get_schedules()
         for i in range(0, len(schedules)):
-            table1.add_row([str(i+1), round(schedules[i].get_fitness(),3), schedules[i].get_numbOfConflicts(), schedules[i].__str__()])
-        print(table1)
+            print([str(i+1), round(schedules[i].get_fitness(),3), schedules[i].get_numbOfConflicts(), schedules[i].__str__()])
+          
     def print_schedule_as_table(self, schedule):
         classes = schedule.get_classes()
-        table = prettytable.PrettyTable(['Class #', 'Dept', 'Course (number, max # of students)', 'Room (Capacity)', 'Instructor (Id)',  'Meeting Time (Id)'])
+        
         for i in range(0, len(classes)):
-            table.add_row([str(i+1), classes[i].get_dept().get_name(), classes[i].get_course().get_name() + " (" +
+       
+            print([str(i+1),classes[i].get_dept().get_name(), classes[i].get_course().get_name() + " (" +
                            classes[i].get_course().get_number() + ", " +
                            str(classes[i].get_course().get_maxNumbOfStudents()) +")",
                            classes[i].get_room().get_number() + " (" + str(classes[i].get_room().get_seatingCapacity()) + ")",
                            classes[i].get_instructor().get_name() +" (" + str(classes[i].get_instructor().get_id()) +")",
                            classes[i].get_meetingTime().get_time() +" (" + str(classes[i].get_meetingTime().get_id()) +")"])
-        print(table)
         
+            
+        
+        
+    def schedule_as_table_to_db(self, schedule):
+        classes = schedule.get_classes()
+        for i in range(0, len(classes)):
+            db_req= mydb.cursor()
+            db_req.execute("INSERT INTO `scheduals` ( `generation_id`, `schedual_id`, `meeting_time`, `meeting_time_id`, `departement`, `coure`, `CourMaxStudents`, `enseignant`, `instructor_id`, `salle`, `salleMax`, `specialite`, `section`, `groupe`) VALUES ('"+str(generationNumber)+"', '1', '"+classes[i].get_meetingTime().get_time()+"','"+classes[i].get_meetingTime().get_id()+"', '"+ classes[i].get_dept().get_name()+"', '"+classes[i].get_course().get_name()+"', '"+str(classes[i].get_course().get_maxNumbOfStudents())+"', '"+classes[i].get_instructor().get_name()+"', '"+str(classes[i].get_instructor().get_id())+"', '"+classes[i].get_room().get_number()+"', '"+str(classes[i].get_room().get_seatingCapacity())+"', '"+classes[i].get_course().get_specialite()+"', '"+classes[i].get_course().get_section()+"', '"+classes[i].get_course().get_groupe()+"');")
+            mydb.commit()
+            
+            
+            
+        
+        
+           
+             
+            
+        
+       
 
 
 
@@ -323,27 +479,77 @@ class DisplayMgr:
 
 
 
-
+    
 
 
 
 
 data = DBMgr()
+
+
+def count_gen_to_db(generationNumber):
+    db_req= mydb.cursor()
+    db_req.execute("INSERT INTO `generations` (`generation_id`, `created_at`, `updated_at`) VALUES ("+str(generationNumber)+", NULL, NULL);")
+    mydb.commit()
+
+
+def gen_to_db():
+        schedules= population.get_schedules()
+        for i in range(0, len(schedules)):     
+            generation_id=str(generationNumber)
+            schaduale_id=str(i+1)
+            schadual_fitness=schedules[i].get_fitness()
+            schadual_classes=schedules[i].__str__()
+            
+            
+          
+            db_req= mydb.cursor()
+            db_req.execute("INSERT INTO generation_scheduals (generation_id, schaduale_id,schadual_fitness,schadual_classes) VALUES ("+generation_id+", "+schaduale_id+",'" + str(schadual_fitness) + "','" + schadual_classes + "')")
+            mydb.commit()
+
+
+
+
 displayMgr = DisplayMgr()
 displayMgr.print_available_data()
-generationNumber = 0
+generationNumber =1
+
+
+
+
 print("\n> Generation # "+str(generationNumber))
 population = Population(POPULATION_SIZE)
 population.get_schedules().sort(key=lambda x: x.get_fitness(), reverse=True)
+
+
+count_gen_to_db(generationNumber)
+gen_to_db()
+ 
 displayMgr.print_generation(population)
+displayMgr.schedule_as_table_to_db(population.get_schedules()[0])
 displayMgr.print_schedule_as_table(population.get_schedules()[0])
+
 geneticAlgorithm = GeneticAlgorithm()
 while (population.get_schedules()[0].get_fitness() != 1.0):
     generationNumber += 1
+    
+    
+    
     print("\n> Generation # " + str(generationNumber))
+    
     population = geneticAlgorithm.evolve(population)
     population.get_schedules().sort(key=lambda x: x.get_fitness(), reverse=True)
+    count_gen_to_db(generationNumber)
+    gen_to_db()
+    
+    
+    
+    
+    
+    
     displayMgr.print_generation(population)
+    displayMgr.schedule_as_table_to_db(population.get_schedules()[0])
     displayMgr.print_schedule_as_table(population.get_schedules()[0])
-print("\n\n")
+    
+print("\n\n") 
 

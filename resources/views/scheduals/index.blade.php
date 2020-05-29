@@ -7,7 +7,7 @@
 
 
 	<style type="text/css">
-	 div{  margin-bottom: 20px;  margin-top: 20px;     border: 15px solid green;
+	 div{  margin-bottom: 20px;  margin-top: 20px;     border: 15px solid red;
 
 	 }
 	 div:hover{cursor: move;}
@@ -63,7 +63,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 <li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>	
  @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -86,7 +86,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	  @if( $schedual->CourMaxStudents > $schedual->salleMax )
  <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -107,9 +107,7 @@
 <li>{{$schedual->specialite}}</li>
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
-
-	<li>{{$schedual->enseignant}}</li>
-	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
+<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	  @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
  @endif
@@ -130,7 +128,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	 @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -151,7 +149,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	  @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -193,7 +191,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 <li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>	
  @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -215,7 +213,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	  @if( $schedual->CourMaxStudents > $schedual->salleMax )
  <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -237,7 +235,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	  @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -259,7 +257,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	 @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -280,7 +278,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	  @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -317,7 +315,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 <li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>	
  @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -339,7 +337,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	  @if( $schedual->CourMaxStudents > $schedual->salleMax )
  <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -361,7 +359,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	  @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -383,7 +381,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	 @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -404,7 +402,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	  @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -438,7 +436,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 <li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>	
  @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -460,7 +458,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	  @if( $schedual->CourMaxStudents > $schedual->salleMax )
  <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -482,7 +480,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	  @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -504,7 +502,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	 @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -525,7 +523,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	  @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -562,7 +560,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 <li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>	
  @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -584,7 +582,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	  @if( $schedual->CourMaxStudents > $schedual->salleMax )
  <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -606,7 +604,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	  @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -628,7 +626,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	 @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -649,7 +647,7 @@
 <li>{{$schedual->section}}</li>
 <li>{{$schedual->groupe}}</li>
 
-	<li>{{$schedual->enseignant}}</li>
+	<li id="li_{{$schedual->id}}"> <p>{{$schedual->enseignant}}</p> </li>
 	<li>salle:{{$schedual->salle}}({{$schedual->salleMax}})</li>
 	  @if( $schedual->CourMaxStudents > $schedual->salleMax )
 <p> <b> <mark>ERROR !</mark>  </b></p>
@@ -669,12 +667,44 @@
 </table>
 @endforeach
 </center>
+
 <script type="text/javascript">
 	
 
-function allowDrop(ev){ev.preventDefault();}
-function dragStart(ev){id=ev.target.id;  }
-function drop(ev){ev.target.append(document.getElementById(id));}
+function allowDrop(ev){ev.preventDefault();  li1=ev.target.getElementsByTagName('li'); 
+
+
+}
+
+
+
+function dragStart(ev){id=ev.target.id; li2=ev.target.getElementsByTagName('li');}
+
+
+function drop(ev){
+
+
+
+	ev.target.append(document.getElementById(id));
+
+
+
+
+for(var j = 0;j <4;j++){
+  if(li1[j].innerText === li2[3].innerText) {
+alert('Error contraint dur non respecté')     
+   
+        
+ 
+ 
+}
+}
+
+ 
+}
+//if (erreur=true) {alert('error contraint dure non respecté');}
+
+ 
 
 </script>
 </body>

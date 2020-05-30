@@ -1,25 +1,19 @@
- 
-
-
-
 <!DOCTYPE html>
 <html>
- 
-<body >
 
- <!-- particles.js container -->  
+<body>
 
-
- 	<?php 	
+<!-- particles.js container -->
 
 
+<?php
 
-$servername = "localhost";
+$servername = "127.0.0.1:3306";
 $username = "root";
-$password = "";
-$dbname = "test";
+$password = env("DB_PASSWORD");
+$dbname = env("DB_DATABASE");
 
- // Create connection
+// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
@@ -38,13 +32,13 @@ if ($result->num_rows > 0) {
     <th>schaduale_classes</th>
     </tr>";
     // output data of each row
-    while($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch_assoc()) {
         echo "
         <tr>
-        <td>".$row["generation_id"]."</td>
-        <td>".$row["schaduale_id"]." </td>
-        <td>".$row["schadual_fitness"]." </td>
-        <td>".$row["schadual_classes"]." </td>
+        <td>" . $row["generation_id"] . "</td>
+        <td>" . $row["schaduale_id"] . " </td>
+        <td>" . $row["schadual_fitness"] . " </td>
+        <td>" . $row["schadual_classes"] . " </td>
         </tr>";
     }
     echo "</table>";
@@ -55,20 +49,6 @@ $conn->close();
 ?>
 
 
-   
-  
-
-   
-
-
-
-
-
- 
-
-
-
 </body>
 </html>
 
- 

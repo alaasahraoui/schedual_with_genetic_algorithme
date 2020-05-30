@@ -15,17 +15,12 @@ class CreateGenerationSchedualsTable extends Migration
     {
         Schema::create('generation_scheduals', function (Blueprint $table) {
 
-
             $table->id();
             $table->unsignedInteger('generation_id');
             $table->string('schaduale_id');
             $table->float('schadual_fitness');
-            $table->string('schadual_classes');
+            $table->string('schadual_classes',1024);
 
-
-
-
-            
         });
     }
 

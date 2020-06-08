@@ -666,6 +666,7 @@
 </tbody>
 </table>
 @endforeach
+<button><a href="http://127.0.0.1:8000/email"> Email it ! </a></button>
 </center>
 
 <script type="text/javascript">
@@ -690,14 +691,10 @@ function drop(ev){
 
 
 
-for(var j = 0;j <4;j++){
-  if(li1[j].innerText === li2[3].innerText) {
+ 
+  if(li1[3].innerText == li2[3].innerText) {
 alert('Error contraint dur non respecté')     
-   
-        
- 
- 
-}
+      
 }
 
  

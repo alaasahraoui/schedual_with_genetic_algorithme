@@ -1,4 +1,4 @@
- import mysql.connector
+import mysql.connector
     
     
 mydb = mysql.connector.connect(
@@ -59,7 +59,7 @@ jour5=['Se21','Se22','Se23','Se24' ,'Se25']
 jours=[jour1,jour2,jour3,jour4,jour5]
 
 
-specialites=['l3_siq']
+specialites=['Siq','L2','isil']
 sections=['s1','s2']
 
 class DBMgr:
@@ -552,4 +552,3 @@ while (population.get_schedules()[0].get_fitness() != 1.0):
     displayMgr.print_schedule_as_table(population.get_schedules()[0])
     
 print("\n\n") 
-

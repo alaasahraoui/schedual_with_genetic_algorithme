@@ -2,6 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
+use Illuminate\Http\Request;
+use App\GenerationSchedual;
+use App\Generation;
+
+ 
+ 
+ 
+use App\Schedual;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Mail\schedual;
+//use App\Mail\schedual;
 use Illuminate\Support\Facades\Mail; 
 Route::resource('scheduals','SchedualController');
 Route::resource('generations','GenerationController');
@@ -38,19 +46,33 @@ Route::get('/email', function () {
 
 
 Route::get('/scheduals/info/l2/section/1', function () {
-    return view('scheduals.l2_sec1');
+
+        $scheduals=Schedual::all();      
+    $generations=Generation::all();
+    $generation_schaduals=GenerationSchedual::all();
+    return view('scheduals.l2_sec1', compact(['generation_schaduals','generations','scheduals']));
 });
 
 Route::get('/scheduals/info/l2/section/2', function () {
-    return view('scheduals.l2_sec2');
+
+	$scheduals=Schedual::all();      
+    $generations=Generation::all();
+    $generation_schaduals=GenerationSchedual::all();
+    return view('scheduals.l2_sec2', compact(['generation_schaduals','generations','scheduals']));
 });
 
 Route::get('/scheduals/info/l3/siq', function () {
-    return view('scheduals.l3_siq');
+	$scheduals=Schedual::all();      
+    $generations=Generation::all();
+    $generation_schaduals=GenerationSchedual::all();
+    return view('scheduals.l3_siq', compact(['generation_schaduals','generations','scheduals']));
 });
 
 
 
 Route::get('/scheduals/info/l3/isil', function () {
-    return view('scheduals.l3_isil');
+	$scheduals=Schedual::all();      
+    $generations=Generation::all();
+    $generation_schaduals=GenerationSchedual::all();
+    return view('scheduals.l3_isil', compact(['generation_schaduals','generations','scheduals']));
 });

@@ -79,12 +79,12 @@ body {
   </button>
   <div class="dropdown-menu">
  <ul> 
- 	<li><a href="http://127.0.0.1:8000/scheduals/info/l2/section/1">L2 sec A</a></li>
- 	<li><a href="http://127.0.0.1:8000/scheduals/info/l2/section/2">L2 sec B</a></li>
+  <li><a href="http://127.0.0.1:8000/scheduals/info/l2/section/1">L2 sec A</a></li>
+  <li><a href="http://127.0.0.1:8000/scheduals/info/l2/section/2">L2 sec B</a></li>
  </ul>
  <ul> 
- 	<li><a href="http://127.0.0.1:8000/scheduals/info/l3/siq">L3 SIQ</a></li>
- 	<li><a href="http://127.0.0.1:8000/scheduals/info/l3/isil">L3 ISIL</a></li>
+  <li><a href="http://127.0.0.1:8000/scheduals/info/l3/siq">L3 SIQ</a></li>
+  <li><a href="http://127.0.0.1:8000/scheduals/info/l3/isil">L3 ISIL</a></li>
  </ul>
  
  

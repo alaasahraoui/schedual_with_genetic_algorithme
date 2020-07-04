@@ -20,8 +20,11 @@ use App\Schedual;
 | contains the "web" middleware group. Now create something great!
 |
 */
+ 
 //use App\Mail\schedual;
 use Illuminate\Support\Facades\Mail; 
+ 
+ 
 Route::resource('scheduals','SchedualController');
 Route::resource('generations','GenerationController');
 Route::resource('generation_scheduals','GenerationSchedualController');
@@ -34,6 +37,7 @@ Route::resource('seances','SeanceController');
 Route::get('/', function () {
     return view('welcome');
 });
+ 
 Route::get('/email', function () {
 
  Mail::to('chrif_zahar@gmail.com')->send(new schedual());
@@ -76,3 +80,4 @@ Route::get('/scheduals/info/l3/isil', function () {
     $generation_schaduals=GenerationSchedual::all();
     return view('scheduals.l3_isil', compact(['generation_schaduals','generations','scheduals']));
 });
+ 

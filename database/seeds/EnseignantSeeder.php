@@ -117,156 +117,26 @@ class EnseignantSeeder extends Seeder
             'code_ens' => "Ens16",
             'nom_ens' => "douga",
             
-        ]);        DB::table('enseignants')->insert([
+        ]);       
+
+
+         DB::table('enseignants')->insert([
             'code_ens' => "Ens17",
             'nom_ens' => "cherfa",
             
         ]);
 
 
-        
-        DB::table('enseignants')->insert([
-            'code_ens' => "Ens18",
-            'nom_ens' => "manser",
-            
-        ]);
-
-
-        DB::table('enseignants')->insert([
-            'code_ens' => "Ens19",
-            'nom_ens' => "lahiani",
-            
-        ]);
-
-
-        DB::table('enseignants')->insert([
-            'code_ens' => "Ens20",
-            'nom_ens' => "guessoum",
-            
-        ]);
-
-
-        DB::table('enseignants')->insert([
-            'code_ens' => "Ens21",
-            'nom_ens' => "kameche",
-            
-        ]);
-
-        DB::table('enseignants')->insert([
-            'code_ens' => "Ens22",
-            'nom_ens' => "oukid",
-            
-        ]);
-
-
-        DB::table('enseignants')->insert([
-            'code_ens' => "Ens23",
-            'nom_ens' => "yekhlef",
-            
-        ]);
-
-        DB::table('enseignants')->insert([
-            'code_ens' => "Ens24",
-            'nom_ens' => "bersali",
-            
-        ]);
-
-        DB::table('enseignants')->insert([
-            'code_ens' => "Ens25",
-            'nom_ens' => "toubaline",
-            
-        ]);
-
-
-        DB::table('enseignants')->insert([
-            'code_ens' => "Ens26",
-            'nom_ens' => "bacha",
-            
-        ]);
-
-        DB::table('enseignants')->insert([
-            'code_ens' => "Ens27",
-            'nom_ens' => "hamouda",
-            
-        ]);
-
-
-        DB::table('enseignants')->insert([
-            'code_ens' => "Ens28",
-            'nom_ens' => "chikhi",
-            
-        ]);
-
-
-        
-        DB::table('enseignants')->insert([
-            'code_ens' => "Ens29",
-            'nom_ens' => "Derrar",
-            
-        ]);
-
-
-
-        
-        DB::table('enseignants')->insert([
-            'code_ens' => "Ens30",
-            'nom_ens' => "cheriguenne",
-            
-        ]);
-
-
-
-        
-        DB::table('enseignants')->insert([
-            'code_ens' => "Ens31",
-            'nom_ens' => "Benaissi",
-            
-        ]);
-
-        
-        DB::table('enseignants')->insert([
-            'code_ens' => "Ens32",
-            'nom_ens' => "Ghebghoub",
-            
-        ]);
-
-
-        
-        DB::table('enseignants')->insert([
-            'code_ens' => "Ens33",
-            'nom_ens' => "Bala",
-            
-        ]);
-
-        
-        DB::table('enseignants')->insert([
-            'code_ens' => "Ens34",
-            'nom_ens' => "Boumahdi",
-            
-        ]);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  
 
  
 
 
- 
+
+
+
+
+
  
     }
 }

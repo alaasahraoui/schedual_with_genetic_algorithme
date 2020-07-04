@@ -496,6 +496,47 @@ class CourseSeeder extends Seeder
 
 
 
+                 DB::table('courses')->insert([
+            'course_code'=> "XC33",
+            'course_nom' =>"Cour_Algo" ,
+            'course_max' =>30,
+            'fondamental'=>"oui",
+            'type'       =>"cour",
+            'specialite' =>"l2",
+            'section'    =>"s2",
+            'groupe'     =>""
+            
+            
+        ]); 
+
+
+                 DB::table('courses')->insert([
+            'course_code'=> "XC34",
+            'course_nom' =>"Cour_rypto" ,
+            'course_max' =>30,
+            'fondamental'=>"oui",
+            'type'       =>"cour",
+            'specialite' =>"Siq",
+            'section'    =>"",
+            'groupe'     =>""
+            
+            
+        ]); 
+
+
+
+                 DB::table('courses')->insert([
+            'course_code'=> "XC35",
+            'course_nom' =>"Cour_IHM" ,
+            'course_max' =>30,
+            'fondamental'=>"oui",
+            'type'       =>"cour",
+            'specialite' =>"isil",
+            'section'    =>"",
+            'groupe'     =>""
+            
+            
+        ]); 
 
 
 

@@ -21,7 +21,7 @@ use App\Schedual;
 |
 */
  
-//use App\Mail\schedual;
+use App\Mail\emplois;
 use Illuminate\Support\Facades\Mail; 
  
  
@@ -40,11 +40,11 @@ Route::get('/', function () {
  
 Route::get('/email', function () {
 
- Mail::to('chrif_zahar@gmail.com')->send(new schedual());
-  Mail::to('alaa_sahraoui@gmail.com')->send(new schedual());
-  Mail::to('nabil@gmail.com')->send(new schedual());
+ Mail::to('chrif_zahar@gmail.com')->send(new emplois());
+  Mail::to('alaa_sahraoui@gmail.com')->send(new emplois());
+  Mail::to('nabil@gmail.com')->send(new emplois());
    
-    return new schedual();
+    return new emplois();
 
 });
 

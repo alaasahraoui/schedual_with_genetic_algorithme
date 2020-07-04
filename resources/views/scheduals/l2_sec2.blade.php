@@ -178,7 +178,7 @@ function closeNav() {
 
 @foreach($scheduals as $schedual)
 
-@if($schedual->meeting_time_id=='Se1'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1'   ) 
+@if($schedual->meeting_time_id=='Se1'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2'   ) 
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >   
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -201,7 +201,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"       class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)">
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se2'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se2'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -223,7 +223,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se3'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se3'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -243,7 +243,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se4'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se4'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -264,7 +264,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se5'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se5'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -306,7 +306,7 @@ function closeNav() {
 
 @foreach($scheduals as $schedual)
 
-@if($schedual->meeting_time_id=='Se6'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se6'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -328,7 +328,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se7'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se7'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -350,7 +350,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se8'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se8'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -372,7 +372,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se9'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se9'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -393,7 +393,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se10'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se10'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -430,7 +430,7 @@ function closeNav() {
 
 @foreach($scheduals as $schedual)
 
-@if($schedual->meeting_time_id=='Se11'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se11'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -452,7 +452,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se12'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se12'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -474,7 +474,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se13'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se13'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -496,7 +496,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se14'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se14'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -517,7 +517,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se15'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se15'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -551,7 +551,7 @@ function closeNav() {
 
 @foreach($scheduals as $schedual)
 
-@if($schedual->meeting_time_id=='Se16'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se16'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -573,7 +573,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se17'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se17'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
 
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -595,7 +595,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se18'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se18'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
 
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -617,7 +617,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se19'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se19'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -638,7 +638,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se20'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se20'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -675,7 +675,7 @@ function closeNav() {
  
 @foreach($scheduals as $schedual)
 
-@if($schedual->meeting_time_id=='Se21'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se21'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -697,7 +697,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se22'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se22'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -719,7 +719,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se23'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se23'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -741,7 +741,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se24'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se24'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
@@ -762,7 +762,7 @@ function closeNav() {
 
 <td class="dropzone"  ondragover="allowDrop(event)" ondrop="drop(event)" class="dragzone"  >   
 @foreach($scheduals as $schedual)
-@if($schedual->meeting_time_id=='Se25'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s1' )
+@if($schedual->meeting_time_id=='Se25'  && $schedual->generation_id==$generation->generation_id && $schedual->specialite=='L2' && $schedual->section=='s2' )
  <div  id="{{$schedual->id}}" ondragstart="dragStart(event)" >  
 <h3>{{$schedual->coure}}({{$schedual->CourMaxStudents}})</h3>
 <ul>
